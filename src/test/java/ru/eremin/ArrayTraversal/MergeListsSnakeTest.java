@@ -6,7 +6,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
-public class MergeListsSnakeTest {
+class MergeListsSnakeTest {
 
     @Test
     void shouldMergeCorrect() {

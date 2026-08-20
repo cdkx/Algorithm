@@ -1,8 +1,9 @@
 package ru.eremin.ArrayTraversal;
 
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 // Ограничения:
 // - Необходимо создать новый Map, где ключи и значения поменяны местами.
@@ -34,12 +35,16 @@ public class ReverseMap {
     }
 
     public static <K, V> Map<V, K> reverse(Map<K, V> source) {
-        Map<V, K> result = new HashMap<>();
+//        Map<V, K> result = new HashMap<>();
+//        for (Map.Entry<K, V> entry : source.entrySet()) {
+//            result.put(entry.getValue(), entry.getKey());
+//        }
+//        return result;
 
-        for (Map.Entry<K, V> entry : source.entrySet()) {
-            result.put(entry.getValue(), entry.getKey());
-        }
-
-        return result;
+        return source.entrySet().stream().collect(Collectors.toMap(
+                Map.Entry::getValue,
+                Map.Entry::getKey,
+                (a, b) -> a,
+                LinkedHashMap::new));
     }
 }

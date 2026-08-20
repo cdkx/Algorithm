@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-public class FirstUniqueElementTest {
+class FirstUniqueElementTest {
     @Test
     void shouldReturnCorrectUniqueElement() {
         Integer expected = 5;
