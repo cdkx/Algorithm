@@ -34,29 +34,13 @@ public class FileFilterBySize {
     public static List<SourceFile> filter(List<SourceFile> files) {
 
         return files.stream()
-                .filter(o -> o.getSizeBytes() > 1024 * 1024)
+                .filter(o -> o.sizeBytes() > 1024 * 1024)
                 .toList();
 
 
     }
-}
 
-// Модель файла
-class SourceFile {
-
-    private String name;
-    private long sizeBytes;
-
-    public SourceFile(String name, long sizeBytes) {
-        this.name = name;
-        this.sizeBytes = sizeBytes;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public long getSizeBytes() {
-        return sizeBytes;
+    // Модель файла
+    public record SourceFile(String name, long sizeBytes) {
     }
 }
