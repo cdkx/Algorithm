@@ -8,7 +8,7 @@ package ru.eremin.ArrayTraversal;
  * Array Traversal / Linear Scan
  * Подсказка:
  * Не ищите готовые значения. Подумайте, как устроены символы в Java и как можно пройти диапазон значений.
- *
+ * <p>
  * Что изучить:
  * char как числовое значение;
  * циклы;
@@ -20,7 +20,13 @@ public class AlphabetPrinter {
 
         for (int i = 0; i < 26; i++) {
             char x = (char) ('A' + i);
-            System.out.println(x);
+            System.out.print(x + " ");
+        }
+
+        System.out.println();
+
+        for (char c = 'A'; c <= 'Z'; c++) {
+            System.out.print(c + " ");
         }
     }
 }
